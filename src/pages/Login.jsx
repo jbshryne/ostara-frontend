@@ -10,7 +10,8 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8000/api-token-auth/", {
+    // const response = await fetch("http://localhost:8000/api-token-auth/", {
+    const response = await fetch("http://ostara-tree-backend/api-token-auth/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
