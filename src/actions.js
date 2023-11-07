@@ -22,7 +22,7 @@ export const postAction = async ({ request }) => {
 
   // console.log(body);
 
-  // await fetch("http://localhost:8000/posts/", {
+  // await fetch("http://:8000/posts/", {
   await fetch("http://ostara-tree-backend.onrender.com/posts/", {
     headers: {
       "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const deleteEntryAction = async ({ request, params }) => {
   const user = JSON.parse(localStorage.getItem("ost_user"));
 
   // await fetch(`http://localhost:8000/posts/${params.id}`, {
-  await fetch(`http://ostara-tree-backend.onrender.com/posts/${params.id}`, {
+  await fetch(`https://ostara-tree-backend.onrender.com/posts/${params.id}`, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Token ${user.token}`,
@@ -75,7 +75,7 @@ export const editEntryAction = async ({ request, params }) => {
   // console.log(body);
 
   // await fetch(`http://localhost:8000/posts/${params.id}/`, {
-  await fetch(`http://ostara-tree-backend.onrender.com/posts/${params.id}/`, {
+  await fetch(`https://ostara-tree-backend.onrender.com/posts/${params.id}/`, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Token ${user.token}`,

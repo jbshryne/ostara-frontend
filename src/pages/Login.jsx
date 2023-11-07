@@ -11,13 +11,16 @@ function Login() {
     e.preventDefault();
 
     // const response = await fetch("http://localhost:8000/api-token-auth/", {
-    const response = await fetch("http://ostara-tree-backend/api-token-auth/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username: email, email, password }),
-    });
+    const response = await fetch(
+      "https://ostara-tree-backend/api-token-auth/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username: email, email, password }),
+      }
+    );
 
     if (response.ok) {
       const data = await response.json();

@@ -1,7 +1,7 @@
 export const entryLoader = async ({ params }) => {
   // const response = await fetch(`http://localhost:8000/posts/${params.id}`);
   const response = await fetch(
-    `http://ostara-tree-backend.onrender.com/posts/${params.id}`
+    `https://ostara-tree-backend.onrender.com/posts/${params.id}`
   );
   const entry = await response.json();
   return entry;
@@ -9,7 +9,7 @@ export const entryLoader = async ({ params }) => {
 
 export const postsLoader = async ({ params }) => {
   // return await fetch("http://localhost:8000/posts")
-  return await fetch("http://ostara-tree-backend.onrender.com/posts")
+  return await fetch("https://ostara-tree-backend.onrender.com/posts")
     .then((response) => response.json())
     .then((data) => {
       const sortedPosts = data.sort(
