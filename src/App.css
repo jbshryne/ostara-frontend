@@ -10,6 +10,7 @@
   align-items: center;
   background-color: rgb(233, 224, 229);
   color: rgb(68, 34, 102);
+  margin-bottom: 10px;
 }
 
 header a {
@@ -19,11 +20,21 @@ header a {
 }
 
 a {
-  color: white;
+  color: rgb(229, 177, 203);
 }
 
 .nav-item {
   margin: 15px;
+}
+
+.blog-title {
+  font-family: "Amatic SC", sans-serif;
+  color: rgb(68, 34, 102);
+  font-size: 3.5em;
+  margin: 10px;
+  font-weight: 700;
+  text-emphasis: bold;
+  padding: 0;
 }
 
 .entry-wrapper {
@@ -42,7 +53,11 @@ a {
   z-index: 1;
 }
 
-.entry-wrapper:hover {
+.blog-entry h2 {
+  margin: 0;
+}
+
+.blog-entry:hover {
   transform: scale(1.02);
   background: rgb(78, 38, 99);
   z-index: 1;
@@ -57,7 +72,6 @@ a {
 }
 
 .entry-wrapper p {
-  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -71,21 +85,6 @@ a {
   background-position: center;
   opacity: 0.15;
   overflow: hidden;
-  /* z-index: -1; */
-}
-
-.blog-title {
-  font-family: "Amatic SC", sans-serif;
-  color: rgb(68, 34, 102);
-  font-size: 3em;
-  margin: 10px;
-  font-weight: 700;
-  text-emphasis: bold;
-  padding: 0;
-}
-
-.blog-entry h2 {
-  margin: 0;
 }
 
 .entry-head {
@@ -100,8 +99,13 @@ a {
   z-index: 2;
 }
 
+.entry-date {
+  color: cornsilk;
+}
+
 .entry-content {
   position: relative;
+  color: cornsilk;
   font-family: "Alegreya Sans", sans-serif;
   display: flex;
   flex-direction: column;
@@ -109,4 +113,114 @@ a {
   width: 95%;
   padding: 20px;
   margin: 10px;
+}
+
+#entry-show-title {
+  font-size: 140%;
+}
+
+#entry-show {
+  font-family: "Alegreya Sans", sans-serif;
+  color: cornsilk;
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 10px;
+}
+
+#about {
+  background: rgb(112, 32, 107);
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: rgb(68, 34, 102);
+  color: cornsilk;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+}
+
+.button:hover {
+  background-color: rgb(78, 38, 99);
+}
+
+/* Example Usage */
+.button-primary {
+  background-color: rgb(112, 32, 107);
+}
+
+.button-secondary {
+  background-color: rgb(91, 44, 114);
+  color: rgb(229, 177, 203);
+}
+
+/* Add styles for the NewEntry component */
+.new-entry-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.new-entry-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-entry-input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.new-entry-textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.new-entry-submit {
+  background-color: rgb(68, 34, 102);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-entry-submit:hover {
+  background-color: rgb(78, 38, 99);
+}
+
+.tags-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px;
+}
+
+.tags-list ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tags-list li {
+  background-color: rgb(68, 34, 102);
+  /* color: cornsilk; */
+  padding: 2px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 14px;
 }

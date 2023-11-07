@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TagsList from "./TagsList";
 
 const bgImages = ["IMG_9872.jpg", "IMG_9865.jpg"];
 
@@ -26,7 +27,9 @@ const BlogEntry = ({ post, imgId }) => {
           ></div>
           <div className="entry-head-text">
             <h2>{post.title}</h2>
-            <span style={{ fontStyle: "italic" }}>{formattedDate}</span>
+            <span style={{ fontStyle: "italic" }} className="entry-date">
+              {formattedDate}
+            </span>
           </div>
         </header>
       </Link>
@@ -36,9 +39,10 @@ const BlogEntry = ({ post, imgId }) => {
           to={`/blog/${post.id}/${post.slug}`}
           style={{ textDecoration: "none" }}
         >
-          [...]
+          <b>[...]</b>
         </Link>
       </p>
+      <TagsList tags={post.tags} />
     </div>
   );
 };

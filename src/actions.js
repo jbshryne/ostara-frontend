@@ -13,18 +13,22 @@ export const postAction = async ({ request }) => {
 
   // console.log(user, user.token);
 
+  const body = JSON.stringify({
+    title: formData.get("title"),
+    content: formData.get("content"),
+    slug,
+    author: user.user_id,
+  });
+
+  // console.log(body);
+
   await fetch("http://localhost:8000/posts/", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Token ${user.token}`,
     },
     method: "POST",
-    body: JSON.stringify({
-      title: formData.get("title"),
-      content: formData.get("content"),
-      slug,
-      author: user.user_id,
-    }),
+    body,
   });
 
   //   revalidator.revalidate();
@@ -43,4 +47,39 @@ export const deleteEntryAction = async ({ request, params }) => {
   });
 
   return redirect("/blog");
+};
+
+export const editEntryAction = async ({ request, params }) => {
+  const user = JSON.parse(localStorage.getItem("ost_user"));
+  let formData = await request.formData();
+
+  console.log(formData.get("title"));
+  console.log(params);
+
+  const slug = formData
+    .get("title")
+    .toLowerCase()
+    .trim()
+    .replace(/ /g, "-")
+    .replace(/[^a-zA-Z0-9_-]+/g, "");
+
+  const body = JSON.stringify({
+    title: formData.get("title"),
+    content: formData.get("content"),
+    slug,
+    author: user.user_id,
+  });
+
+  // console.log(body);
+
+  await fetch(`http://localhost:8000/posts/${params.id}/`, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Token ${user.token}`,
+    },
+    method: "PUT",
+    body,
+  });
+
+  return redirect(`/blog/${params.id}/${slug}`);
 };

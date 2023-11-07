@@ -5,15 +5,17 @@ import BlogPost from "../components/BlogPost";
 
 const Posts = () => {
   const posts = useLoaderData();
-  // const posts = localData;
+  // console.log(posts);
 
   return (
     <div>
       <h1 className="blog-title">Ostara Tree Blog</h1>
-      <Link to="/blog/new">New Post</Link>
       {posts.map((post, imgId) => (
         <BlogPost key={imgId} post={post} imgId={imgId} />
       ))}
+      <Link to="/blog/new">
+        <button>New Post</button>
+      </Link>
     </div>
   );
 };

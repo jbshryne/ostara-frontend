@@ -1,6 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Form } from "react-router-dom";
+// import TagManager from "../components/TagManager";
 
 const NewEntry = () => {
   const [formData, setFormData] = useState({
@@ -16,20 +16,22 @@ const NewEntry = () => {
   };
 
   return (
-    <div>
-      <Form action="/blog/new" method="POST">
+    <div className="new-entry-container">
+      <Form action="/blog/new" method="POST" className="new-entry-form">
         <input
           type="text"
           name="title"
           placeholder="Title of Entry"
+          className="new-entry-input"
           onChange={handleFormData}
         />
         <textarea
           name="content"
           placeholder="What's going on?"
+          className="new-entry-textarea"
           onChange={handleFormData}
         />
-        <input type="submit" />
+        <input type="submit" className="new-entry-submit" />
       </Form>
     </div>
   );
