@@ -18,12 +18,12 @@ For MVP, I created and implemented one full CRUD model (Posts) and a custom User
 
 - Django
 - Django REST Framework
-- Neon JWT
+- PostgreSQL
 
 ## Unfinished Business
 
 - Home page needs hero image and content.
 
-- The transparent images over the Blog post header are test images. I need to put in real ones, and designate either a random image associator for new posts, or let you choose and put an field on the Blog model.
+- The transparent images over the Blog post headers are test images. I need to put in real ones, and designate either a random image associator for new posts, or let you choose and put that field on the Post model.
 
-- The last thing I did was start to add & integrate Tags to group blog posts by topic. I was able to add the Tag model to the backend, and the frontend currently displays the tags for each post. I would like to add the ability to click on a Tag and see all the posts that have that Tag, as well as add & edit tags for each post (for admins).
+- The last thing I did was begin to add & integrate Tags to group blog posts by topic. I was able to add the Tag model to the backend, and the frontend currently displays the tags for each post. I would like to add the ability to click on a Tag and see all the posts that have that Tag, as well as add & edit tags for each post (for admins).
