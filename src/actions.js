@@ -23,7 +23,7 @@ export const postAction = async ({ request }) => {
   // console.log(body);
 
   // await fetch("http://:8000/posts/", {
-  await fetch("http://ostara-tree-backend.onrender.com/posts/", {
+  let res = await fetch("https://ostara-tree-backend.onrender.com/posts/", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Token ${user.token}`,
@@ -33,7 +33,8 @@ export const postAction = async ({ request }) => {
   });
 
   //   revalidator.revalidate();
-  return redirect("/blog");
+  if (res.ok) return redirect("/blog");
+  alert("Something went wrong");
 };
 
 export const deleteEntryAction = async ({ request, params }) => {
