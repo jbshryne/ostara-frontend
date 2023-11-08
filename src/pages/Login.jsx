@@ -12,7 +12,7 @@ function Login() {
 
     // const response = await fetch("http://localhost:8000/api-token-auth/", {
     const response = await fetch(
-      "https://ostara-tree-backend/api-token-auth/",
+      "https://ostara-tree-backend.onrender.com/api-token-auth/",
       {
         method: "POST",
         headers: {
